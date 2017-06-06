@@ -67,6 +67,33 @@ namespace BookingApp.Migrations
                 userManager.Create(user);
                 userManager.AddToRole(user.Id, "Admin");
             }
+
+            RoomReservations roomres = new RoomReservations();
+            roomres.Id = 1;
+            roomres.StartDate = DateTime.Now;
+            roomres.EndDate = DateTime.Now;
+            roomres.Timestamp = DateTime.Now;
+
+            Room room = new Room();
+            room.Id = 1;
+            room.RoomNumber = 212;
+            room.BedCount = 2;
+            room.Description = "Ima WIFI";
+            room.PricePerNight = 100;
+
+            Region reg = new Region();
+            reg.Id = 1;
+            reg.Name = "Zapadna Srbija";
+
+            Place place = new Place();
+            place.Id = 1;
+            place.Name = "Sabac";
+
+            Country county = new Country();
+            county.Id = 1;
+            county.Code = 115;
+            county.Name = "Srbija";
+
         }
     }
 }
