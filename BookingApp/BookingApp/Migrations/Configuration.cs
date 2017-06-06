@@ -67,6 +67,26 @@ namespace BookingApp.Migrations
                 userManager.Create(user);
                 userManager.AddToRole(user.Id, "Admin");
             }
+
+            Accommodation ac = new Accommodation();
+            ac.Address = "Akacija 29";
+            ac.Approved = true;
+            ac.AverageGrade = 4.5F;
+            ac.Description = "Pun ";
+            ac.Id = 1;
+            ac.ImageURL = "okilja.png";
+            ac.Latitude = 45.22;
+            ac.Longitude = 30.45;
+            ac.Name = "Stan na dan";
+
+            AccommodationType at = new AccommodationType();
+            at.Id = 2;
+            at.Name = "Hotel";
+
+            Comment c = new Comment();
+            c.Grade = 4;
+            c.Id = 3;
+            c.Text = "bal bla";
         }
     }
 }
