@@ -15,6 +15,7 @@ using System.IO;
 namespace System {
 	public class Comment {
 
+        private int id;
 		private int grade;
 		private string text;
 		public List<User> m_User;
@@ -28,21 +29,33 @@ namespace System {
 
 		}
 
-		public int Grade{
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+            set
+            {
+                id = value;
+            }
+        }
+
+        public int Grade{
 			get{
-				return Grade;
+				return grade;
 			}
 			set{
-				Grade = value;
+				grade = value;
 			}
 		}
 
 		public string Text{
 			get{
-				return Text;
+				return text;
 			}
 			set{
-				Text = value;
+				text = value;
 			}
 		}
 

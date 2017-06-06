@@ -42,28 +42,28 @@ namespace System {
 
 		public int Id{
 			get{
-				return Id;
+				return id;
 			}
 			set{
-				Id = value;
+				id = value;
 			}
 		}
 
 		public string Password{
 			get{
-				return Password;
+				return password;
 			}
 			set{
-				Password = value;
+				password = value;
 			}
 		}
 
 		public string Username{
 			get{
-				return Username;
+				return username;
 			}
 			set{
-				Username = value;
+				username = value;
 			}
 		}
 

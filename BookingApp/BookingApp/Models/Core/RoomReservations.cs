@@ -15,6 +15,7 @@ using System.IO;
 namespace System {
 	public class RoomReservations {
 
+        private int id;
 		private string endDate;
 		private string startDate;
 		private DateTime timestamp;
@@ -29,7 +30,19 @@ namespace System {
 
 		}
 
-		public string EndDate{
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+            set
+            {
+                id = value;
+            }
+        }
+
+        public string EndDate{
 			get{
 				return endDate;
 			}
