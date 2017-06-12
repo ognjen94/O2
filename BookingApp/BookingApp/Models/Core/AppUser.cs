@@ -12,9 +12,11 @@ namespace System {
 		private int id;
 		private string password;
 		private string username;
-		public List<Comment> m_Comment;
-		public List<RoomReservations> m_RoomReservations;
-		public List<Accommodation> m_Accommodation;
+		public List<Comment> m_Comment { get; set; }
+
+		public List<RoomReservations> m_RoomReservations { get; set; }
+
+		public List<Accommodation> m_Accommodation { get; set; }
 
 		public AppUser(){
 
@@ -60,6 +62,6 @@ namespace System {
 			}
 		}
 
-    }//end AppUser
+    }
 
-}//end namespace System
+}
