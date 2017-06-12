@@ -264,13 +264,9 @@
     <Compile Include="Migrations\201706040304228_Initial.Designer.cs">
       <DependentUpon>201706040304228_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706060817047_Data Model Update.cs" />
-    <Compile Include="Migrations\201706060817047_Data Model Update.Designer.cs">
-      <DependentUpon>201706060817047_Data Model Update.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706060834576_Final Model Update.cs" />
-    <Compile Include="Migrations\201706060834576_Final Model Update.Designer.cs">
-      <DependentUpon>201706060834576_Final Model Update.cs</DependentUpon>
+    <Compile Include="Migrations\201706121025459_UpdateModel.cs" />
+    <Compile Include="Migrations\201706121025459_UpdateModel.Designer.cs">
+      <DependentUpon>201706121025459_UpdateModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -368,11 +364,8 @@
     <EmbeddedResource Include="Migrations\201706040304228_Initial.resx">
       <DependentUpon>201706040304228_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706060817047_Data Model Update.resx">
-      <DependentUpon>201706060817047_Data Model Update.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706060834576_Final Model Update.resx">
-      <DependentUpon>201706060834576_Final Model Update.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706121025459_UpdateModel.resx">
+      <DependentUpon>201706121025459_UpdateModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -12,7 +12,7 @@ namespace BookingApp.Models
     {   
         public virtual DbSet<AppUser> AppUsers { get; set; }
 
-        public virtual DbSet<Accommodation> Accomodations { get; set; }
+        public virtual DbSet<Accommodation> Accommodations { get; set; }
         public virtual DbSet<AccommodationType> AccommodationTypes { get; set; }
         public virtual DbSet<Comment> Comments { get; set; }
         public virtual DbSet<Country> Countries { get; set; }

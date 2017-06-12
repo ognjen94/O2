@@ -21,12 +21,15 @@ namespace System {
 		public List<Room> m_Room { get; set; }
 
         [Required]
-        public Place place { get; set}
+        public Place Place { get; set; }
 
         [Required]
-        public AppUser owner { get; set; }
+        public AppUser Owner { get; set; }
 
-		public Accommodation(){
+        [Required]
+        public AccommodationType AccommodationType { get; set; }
+
+        public Accommodation(){
 
 		}
 

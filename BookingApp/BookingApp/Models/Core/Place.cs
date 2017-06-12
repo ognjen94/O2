@@ -14,7 +14,7 @@ namespace System {
 		public List<Accommodation> m_Accommodation { get; set; }
 
         [Required]
-        public Region region { get; set; }
+        public Region Region { get; set; }
 
         public Place(){
 

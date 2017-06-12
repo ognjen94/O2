@@ -14,7 +14,7 @@ namespace System {
 		public List<Place> m_Place { get; set; }
 
         [Required]
-        public Country country { get; set; }
+        public Country Country { get; set; }
 
 		public Region(){
 

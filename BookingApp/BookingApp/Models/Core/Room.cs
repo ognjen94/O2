@@ -17,7 +17,7 @@ namespace System {
 		public List<RoomReservations> m_RoomReservations { get; set; }
 
         [Required]
-        public Accommodation accomodation { get; set; }
+        public Accommodation Accomodation { get; set; }
 
         public Room(){
 

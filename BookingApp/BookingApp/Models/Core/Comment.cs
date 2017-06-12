@@ -11,14 +11,12 @@ namespace System {
         private int id;
         private int grade;
         private string text;
-        public List<AppUser> m_User { get; set; }
-        public List<Accommodation> m_Accommodation { get; set; }
 
         [Required]
-        public AppUser user { get; set; }
+        public AppUser User { get; set; }
 
         [Required]
-        public Accommodation accomodation { get; set; }
+        public Accommodation Accomodation { get; set; }
 
 		public Comment(){
 
