@@ -7,14 +7,14 @@ using System.IO;
 namespace System {
 	public class AppUser
     {
-
-		private string email;
+		
 		private int id;
-		private string password;
+        private string email;        
 		private string username;
-		public List<Comment> m_Comment { get; set; }
+        private string password;
+        public List<Comment> m_Comment { get; set; }
 
-		public List<RoomReservations> m_RoomReservations { get; set; }
+		public List<RoomReservation> m_RoomReservation { get; set; }
 
 		public List<Accommodation> m_Accommodation { get; set; }
 

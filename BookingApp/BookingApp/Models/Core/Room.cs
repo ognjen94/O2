@@ -9,15 +9,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace System {
 	public class Room {
 
-		private int bedCount;
-		private string description;
 		private int id;
-		private int pricePerNight;
 		private int roomNumber;
-		public List<RoomReservations> m_RoomReservations { get; set; }
+        private int bedCount;
+        private string description;
+        private int pricePerNight;
+        public List<RoomReservation> m_RoomReservation { get; set; }
 
         [Required]
-        public Accommodation Accomodation { get; set; }
+        public Accommodation accommodation { get; set; }
 
         public Room(){
 

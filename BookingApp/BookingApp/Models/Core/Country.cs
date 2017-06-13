@@ -8,10 +8,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace System {
 	public class Country {
 
-		private int code;
 		private int id;
 		private string name;
-		public List<Region> m_Region { get; set; }
+        private int code;
+        public List<Region> m_Region { get; set; }
 
 		public Country(){
 

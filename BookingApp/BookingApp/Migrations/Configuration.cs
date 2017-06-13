@@ -98,7 +98,7 @@ namespace BookingApp.Migrations
             //}
             //--------------------------------------------------------------------------------------------
 
-            RoomReservations roomres = new RoomReservations();
+            RoomReservation roomres = new RoomReservation();
             //roomres.Id = 1;
             roomres.StartDate = DateTime.Now;
             roomres.EndDate = DateTime.Now;
@@ -114,8 +114,8 @@ namespace BookingApp.Migrations
             room.BedCount = 2;
             room.Description = "Ima WIFI";
             room.PricePerNight = 100;
-            room.m_RoomReservations = new System.Collections.Generic.List<RoomReservations>();
-            room.m_RoomReservations.Add(roomres);
+            room.m_RoomReservation = new System.Collections.Generic.List<RoomReservation>();
+            room.m_RoomReservation.Add(roomres);
 
             Country county = new Country();
             //county.Id = 1;
@@ -125,14 +125,14 @@ namespace BookingApp.Migrations
             Region reg = new Region();
             //reg.Id = 1;
             reg.Name = "Zapadna Srbija";
-            reg.Country = county;
+            reg.country = county;
             county.m_Region = new System.Collections.Generic.List<Region>();
             county.m_Region.Add(reg);
 
             Place place = new Place();
             //place.Id = 1;
             place.Name = "Sabac";
-            place.Region = reg;
+            place.region = reg;
             reg.m_Place = new System.Collections.Generic.List<Place>();
             reg.m_Place.Add(place);
 
@@ -147,9 +147,9 @@ namespace BookingApp.Migrations
             user.Password = "admin";
             user.m_Comment = new System.Collections.Generic.List<Comment>();
             user.m_Comment.Add(c);
-            user.m_RoomReservations = new System.Collections.Generic.List<RoomReservations>();
-            user.m_RoomReservations.Add(roomres);
-            c.User = user;
+            user.m_RoomReservation = new System.Collections.Generic.List<RoomReservation>();
+            user.m_RoomReservation.Add(roomres);
+            c.user = user;
 
             Accommodation ac = new Accommodation();
             ac.Address = "Akacija 29";
@@ -163,27 +163,27 @@ namespace BookingApp.Migrations
             ac.Name = "Stan na dan";
             ac.m_Comment = new System.Collections.Generic.List<Comment>();
             ac.m_Comment.Add(c);
-            c.Accomodation = ac;
+            c.accommodation = ac;
             ac.m_Room = new System.Collections.Generic.List<Room>();
             ac.m_Room.Add(room);
-            room.Accomodation = ac;
+            room.accommodation = ac;
 
             at.m_Accommodation = new System.Collections.Generic.List<Accommodation>();
             at.m_Accommodation.Add(ac);
-            ac.AccommodationType = at;
+            ac.accommodationType = at;
 
-            ac.Owner = user;
+            ac.owner = user;
             user.m_Accommodation = new System.Collections.Generic.List<Accommodation>();
             user.m_Accommodation.Add(ac);
 
-            ac.Place = place;
+            ac.place = place;
             place.m_Accommodation = new System.Collections.Generic.List<Accommodation>();
             place.m_Accommodation.Add(ac);
 
 
             try
             {
-                context.RoomReservationss.Add(roomres);
+                context.RoomReservations.Add(roomres);
                 context.AccommodationTypes.Add(at);                              
                 context.Rooms.Add(room);
                 context.Countries.Add(county);

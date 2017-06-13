@@ -7,27 +7,27 @@ using System.ComponentModel.DataAnnotations;
 namespace System {
 	public class Accommodation {
 
-		private string address;
-		private bool approved;
+        private int id;
+        private string name;
+        private string description;
+        private string address;		
 		private float averageGrade;
-		private string description;
-		private int id;
-		private string imageURL;
 		private double latitude;
 		private double longitude;
-		private string name;
+        private string imageURL;
+        private bool approved;
 
-		public List<Comment> m_Comment { get; set; }
+        public List<Comment> m_Comment { get; set; }
 		public List<Room> m_Room { get; set; }
 
         [Required]
-        public Place Place { get; set; }
+        public AccommodationType accommodationType { get; set; }
 
         [Required]
-        public AppUser Owner { get; set; }
+        public Place place { get; set; }
 
         [Required]
-        public AccommodationType AccommodationType { get; set; }
+        public AppUser owner { get; set; }
 
         public Accommodation(){
 

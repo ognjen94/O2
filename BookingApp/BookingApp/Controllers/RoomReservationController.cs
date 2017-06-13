@@ -16,16 +16,16 @@ namespace BookingApp.Controllers
         private BAContext database = new BAContext();
 
         // GET: api/RoomReservations
-        public IQueryable<RoomReservations> GetRoomReservations()
+        public IQueryable<RoomReservation> GetRoomReservations()
         {
-            return database.RoomReservationss;
+            return database.RoomReservations;
         }
 
         // GET: api/Rooms/5
-        [ResponseType(typeof(RoomReservations))]
+        [ResponseType(typeof(RoomReservation))]
         public IHttpActionResult GetRoomReservations(int id)
         {
-            RoomReservations rr = database.RoomReservationss.Find(id);
+            RoomReservation rr = database.RoomReservations.Find(id);
             if (rr == null)
             {
                 return NotFound();
@@ -35,7 +35,7 @@ namespace BookingApp.Controllers
 
         // PUT: api/RoomReservations/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutRoomReservations(int id, RoomReservations rr)
+        public IHttpActionResult PutRoomReservations(int id, RoomReservation rr)
         {
             if (!ModelState.IsValid)
             {
@@ -69,31 +69,31 @@ namespace BookingApp.Controllers
         }
 
         // POST: api/Room
-        [ResponseType(typeof(RoomReservations))]
-        public IHttpActionResult PostRoomReservations(RoomReservations rr)
+        [ResponseType(typeof(RoomReservation))]
+        public IHttpActionResult PostRoomReservations(RoomReservation rr)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            database.RoomReservationss.Add(rr);
+            database.RoomReservations.Add(rr);
             database.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = rr.Id }, rr);
         }
 
         // DELETE: api/Rooms/5
-        [ResponseType(typeof(RoomReservations))]
+        [ResponseType(typeof(RoomReservation))]
         public IHttpActionResult DeleteRoomReservations(int id)
         {
-            RoomReservations rr = database.RoomReservationss.Find(id);
+            RoomReservation rr = database.RoomReservations.Find(id);
             if (rr == null)
             {
                 return NotFound();
             }
 
-            database.RoomReservationss.Remove(rr);
+            database.RoomReservations.Remove(rr);
             database.SaveChanges();
 
             return Ok(rr);
@@ -110,7 +110,7 @@ namespace BookingApp.Controllers
 
         private bool RoomReservationsExists(int id)
         {
-            return database.RoomReservationss.Count(e => e.Id == id) > 0;
+            return database.RoomReservations.Count(e => e.Id == id) > 0;
         }
     }
 }

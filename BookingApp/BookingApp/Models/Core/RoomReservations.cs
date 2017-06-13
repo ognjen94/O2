@@ -5,18 +5,18 @@ using System.IO;
 
 
 namespace System {
-	public class RoomReservations {
+	public class RoomReservation {
 
         private int id;
 		private DateTime? endDate;
 		private DateTime? startDate;
 		private DateTime? timestamp;
 
-		public RoomReservations(){
+		public RoomReservation(){
 
 		}
 
-		~RoomReservations(){
+		~RoomReservation(){
 
 		}
 

@@ -13,10 +13,10 @@ namespace System {
         private string text;
 
         [Required]
-        public AppUser User { get; set; }
+        public AppUser user { get; set; }
 
         [Required]
-        public Accommodation Accomodation { get; set; }
+        public Accommodation accommodation { get; set; }
 
 		public Comment(){
 
