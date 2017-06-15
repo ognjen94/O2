@@ -9,14 +9,17 @@ import { Accommodation } from '../model/accommodation.model';
 export class AccommodationService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
-  private accommodationsUrl = 'api/accommodation';  // URL to web api
+  //private accommodationsUrl = 'api/accommodation';  // URL to web api
+  private accommodationsUrl = 'http://localhost:54042/api/accommodation';
 
   constructor(private http: Http) { }
 
-  getAccommodations(): Promise<Accommodation[]> {
+  getAcc(): Promise<Accommodation[]> {
     return this.http.get(this.accommodationsUrl)
                .toPromise()
-               .then(response => response.json().data as Accommodation[])
+               .then(response =>  {
+                  debugger
+                  return response.json().data as Accommodation[];})
                .catch(this.handleError);
   }
 

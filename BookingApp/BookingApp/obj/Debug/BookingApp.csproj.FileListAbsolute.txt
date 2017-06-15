@@ -98,7 +98,6 @@ C:\Users\student\Desktop\New folder\O2\BookingApp\BookingApp\obj\Debug\BookingAp
 C:\Users\student\Desktop\New folder\O2\BookingApp\BookingApp\obj\Debug\BookingApp.csproj.GenerateResource.Cache
 C:\Users\student\Desktop\New folder\O2\BookingApp\BookingApp\obj\Debug\BookingApp.dll
 C:\Users\student\Desktop\New folder\O2\BookingApp\BookingApp\obj\Debug\BookingApp.pdb
-C:\Users\student\Desktop\New folder\O2\BookingApp\BookingApp\obj\Debug\BookingApp.Migrations.UpdateModel.resources
 C:\Users\student\Desktop\repo\repo2\O2\BookingApp\BookingApp\bin\ApplicationInsights.config
 C:\Users\student\Desktop\repo\repo2\O2\BookingApp\BookingApp\bin\roslyn\csc.exe
 C:\Users\student\Desktop\repo\repo2\O2\BookingApp\BookingApp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -303,4 +302,4 @@ C:\Users\student\Desktop\repo\O2\BookingApp\BookingApp\obj\Debug\BookingApp.Migr
 C:\Users\student\Desktop\repo\O2\BookingApp\BookingApp\obj\Debug\BookingApp.csproj.GenerateResource.Cache
 C:\Users\student\Desktop\repo\O2\BookingApp\BookingApp\obj\Debug\BookingApp.dll
 C:\Users\student\Desktop\repo\O2\BookingApp\BookingApp\obj\Debug\BookingApp.pdb
-C:\Users\student\Desktop\New folder\O2\BookingApp\BookingApp\obj\Debug\BookingApp.csprojResolveAssemblyReference.cache
+C:\Users\student\Desktop\New folder\O2\BookingApp\BookingApp\obj\Debug\BookingApp.Migrations.Model.resources

@@ -1,5 +1,5 @@
 
-<p><strong>Username:</strong></p>
+<!--p><strong>Username:</strong></p>
 
 <p><input maxlength="30" type="text" /></p>
 
@@ -7,6 +7,26 @@
 
 <p><input maxlength="30" type="text" /></p>
 
-<p><input name="Login" type="button" value="Login" /></p>
+<p><input name="Login" type="button" value="Login" /></p-->
 
-<!--router-outlet></router-outlet-->
+<h1>
+  {{title}}
+  <div *ngIf="!isLoggedIn()">
+    <button (click)="logIn()">Log In!</button>
+  </div>
+  <div *ngIf="isLoggedIn()">
+    <button (click)="logOut()">Log Out!</button>
+  </div>
+
+  <nav>
+      <a routerLink="/accommodations" routerLinkActive="active">Accommodations</a>
+    </nav>
+  <!--ol>
+    <li><a [routerLink]="['/home']">Home</a></li>
+    <li><a [routerLink]="['/about/1']">About</a></li>
+    <li><a [routerLink]="['/other']">Other</a></li>
+  </ol>
+
+  <router-outlet></router-outlet-->
+</h1>
+<router-outlet></router-outlet>

@@ -5,9 +5,9 @@ import { AppUser } from './app-user.model';
 export class Accommodation {
     constructor(
         public id: number,
-        public name: string,
+        public Name: string,
         public description: string,
-        public address: string,
+        public Address: string,
         public averageGrade: number,
         public latitude: number,
         public longitude: number,
