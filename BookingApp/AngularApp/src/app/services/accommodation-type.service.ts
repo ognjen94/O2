@@ -4,22 +4,21 @@ import { RequestOptions } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Accommodation } from '../model/accommodation.model';
+import { AccommodationType } from '../model/accommodation-type.model';
 
 @Injectable()
-export class AccommodationService {
+export class AccommodationTypeService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
   //private accommodationsUrl = 'api/accommodation';  // URL to web api
-  private accommodationsUrl = 'http://localhost:54042/api/accommodation';
+  private accTypeUrl = 'http://localhost:54042/api/AccommodationTypes';
 
   constructor(private http: Http) { }
 
-  getAcc(): Promise<Accommodation[]> {
-    return this.http.get(this.accommodationsUrl)
+  getAcc(): Promise<AccommodationType[]> {
+    return this.http.get(this.accTypeUrl)
                .toPromise()
-               .then(response => {return response.json() as Accommodation[]})
-              // SRANJEEE .then(response => { response.json().data as Accommodation[]; debugger })
+               .then(response => {return response.json() as AccommodationType[]})
                .catch(this.handleError);
   }
 

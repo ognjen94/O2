@@ -13,14 +13,21 @@ import { AccommodationService } from '../services/accommodation.service';
 
 export class AccommodationComponent implements OnInit {
     accommodations : Accommodation[];
+        hidden: boolean = true;
     
   constructor(private accommodationService: AccommodationService) { 
+  }
+
+    back()
+  {
+
   }
 
   getAccommodations(): void {
       this.accommodationService
       .getAcc()
-      .then(acc => {this.accommodations = acc; debugger});
+      .then(acc => {this.accommodations = acc; debugger})
+      .catch(reason => alert(reason));
   }
 
   ngOnInit() {

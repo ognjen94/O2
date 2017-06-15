@@ -4,22 +4,21 @@ import { RequestOptions } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Accommodation } from '../model/accommodation.model';
+import { AppUser } from '../model/app-user.model';
 
 @Injectable()
-export class AccommodationService {
+export class AppUserService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
   //private accommodationsUrl = 'api/accommodation';  // URL to web api
-  private accommodationsUrl = 'http://localhost:54042/api/accommodation';
+  private appUserUrl = 'http://localhost:54042/api/AppUsers';
 
   constructor(private http: Http) { }
 
-  getAcc(): Promise<Accommodation[]> {
-    return this.http.get(this.accommodationsUrl)
+  getAcc(): Promise<AppUserService[]> {
+    return this.http.get(this.appUserUrl)
                .toPromise()
-               .then(response => {return response.json() as Accommodation[]})
-              // SRANJEEE .then(response => { response.json().data as Accommodation[]; debugger })
+               .then(response => {return response.json() as AppUser[]})
                .catch(this.handleError);
   }
 
