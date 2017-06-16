@@ -17,7 +17,7 @@ export class AccommodationComponent implements OnInit {
   getAccommodations(): void {
       this.accommodationService
       .getAcc()
-      .then(acc => this.accommodations = acc);
+      .then(acc => {this.accommodations = acc; debugger});
   }
 
   ngOnInit() {

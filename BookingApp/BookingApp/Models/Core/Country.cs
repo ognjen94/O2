@@ -4,12 +4,14 @@ using System.Text;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Newtonsoft.Json;
 
 namespace System {
 	public class Country {
 
 		private int id;
 		private string name;
+        [JsonIgnore]
         private int code;
         public List<Region> m_Region { get; set; }
 

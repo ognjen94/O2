@@ -16,7 +16,7 @@ export class AccommodationService {
   constructor(private http: Http) { }
 
   getAcc(): Promise<Accommodation[]> {
-    return this.http.get(this.accommodationsUrl)
+    return this.http.get(this.accommodationsUrl+"?$expand=owner,place/region/country,accommodationType")
                .toPromise()
                .then(response => {return response.json() as Accommodation[]})
               // SRANJEEE .then(response => { response.json().data as Accommodation[]; debugger })

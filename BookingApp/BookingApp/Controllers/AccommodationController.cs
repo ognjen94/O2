@@ -8,6 +8,8 @@ using BookingApp.Models;
 using System.Web.Http.Description;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.Web.Http.OData;
+using System.Web.Http.OData.Routing;
 
 namespace BookingApp.Controllers
 {
@@ -16,6 +18,7 @@ namespace BookingApp.Controllers
         private BAContext database = new BAContext();
 
         // GET: api/Accommodations
+        [EnableQuery(MaxExpansionDepth = 4)]
         public IQueryable<Accommodation> GetAccommodations()
         {
             return database.Accommodations;

@@ -11,7 +11,7 @@ export class PlaceService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
   //private accommodationsUrl = 'api/accommodation';  // URL to web api
-  private accTypeUrl = 'http://localhost:54042/api/Places';
+  private accTypeUrl = 'http://localhost:54042/api/Place';
 
   constructor(private http: Http) { }
 

@@ -11,7 +11,7 @@ export class AppUserService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
   //private accommodationsUrl = 'api/accommodation';  // URL to web api
-  private appUserUrl = 'http://localhost:54042/api/AppUsers';
+  private appUserUrl = 'http://localhost:54042/api/AppUser';
 
   constructor(private http: Http) { }
 

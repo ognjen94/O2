@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
-
+using Newtonsoft.Json;
 
 namespace System {
 	public class AppUser
@@ -12,11 +12,12 @@ namespace System {
         private string email;        
 		private string username;
         private string password;
+        [JsonIgnore]
         public List<Comment> m_Comment { get; set; }
-
-		public List<RoomReservation> m_RoomReservation { get; set; }
-
-		public List<Accommodation> m_Accommodation { get; set; }
+        [JsonIgnore]
+        public List<RoomReservation> m_RoomReservation { get; set; }
+        [JsonIgnore]
+        public List<Accommodation> m_Accommodation { get; set; }
 
 		public AppUser(){
 

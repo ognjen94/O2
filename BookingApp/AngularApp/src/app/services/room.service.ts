@@ -11,12 +11,12 @@ export class RoomService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
   //private accommodationsUrl = 'api/accommodation';  // URL to web api
-  private roomUrl = 'http://localhost:54042/api/Rooms';
+  private roomUrl = 'http://localhost:54042/api/Room';
 
   constructor(private http: Http) { }
 
   getRoom(): Promise<Room[]> {
-    return this.http.get(this.roomUrl)
+    return this.http.get(this.roomUrl+"?$expand=accommodation")
                .toPromise()
                .then(response => {return response.json() as Room[]})
                .catch(this.handleError);

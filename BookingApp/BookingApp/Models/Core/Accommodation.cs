@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 
 namespace System {
 	public class Accommodation {
@@ -17,8 +18,10 @@ namespace System {
         private string imageURL;
         private bool approved;
 
+        [JsonIgnore]
         public List<Comment> m_Comment { get; set; }
-		public List<Room> m_Room { get; set; }
+        [JsonIgnore]
+        public List<Room> m_Room { get; set; }
 
         [Required]
         public AccommodationType accommodationType { get; set; }
