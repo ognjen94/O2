@@ -9,15 +9,19 @@ import { AuthService } from './services/auth.service';
 import { LoggedInGuard } from './logged-in.guard'
 import { AccommodationComponent } from './accommodation/accommodation.component';
 import { AccommodationService } from './services/accommodation.service'
+import { AccommodationTypeComponent } from './accommodation-type/accommodation-type.component';
+import { AccommodationTypeService } from './services/accommodation-type.service'
 
 const routes: Routes = [ 
-  {path: 'accommodations', component: AccommodationComponent}
+  {path: 'accommodations', component: AccommodationComponent},
+  {path: 'accommodationType', component: AccommodationTypeComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    AccommodationComponent
+    AccommodationComponent,
+    AccommodationTypeComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +31,7 @@ const routes: Routes = [
   
   ],
   exports: [ RouterModule ],
-  providers: [AuthService, LoggedInGuard, AccommodationService],
+  providers: [AuthService, LoggedInGuard, AccommodationService, AccommodationTypeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

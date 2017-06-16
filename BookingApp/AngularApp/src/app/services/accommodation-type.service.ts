@@ -11,11 +11,11 @@ export class AccommodationTypeService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
   //private accommodationsUrl = 'api/accommodation';  // URL to web api
-  private accTypeUrl = 'http://localhost:54042/api/AccommodationTypes';
+  private accTypeUrl = 'http://localhost:54042/api/AccommodationType';
 
   constructor(private http: Http) { }
 
-  getAcc(): Promise<AccommodationType[]> {
+  getAccType(): Promise<AccommodationType[]> {
     return this.http.get(this.accTypeUrl)
                .toPromise()
                .then(response => {return response.json() as AccommodationType[]})

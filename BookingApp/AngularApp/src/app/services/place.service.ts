@@ -15,7 +15,7 @@ export class PlaceService {
 
   constructor(private http: Http) { }
 
-  getAcc(): Promise<Place[]> {
+  getPlace(): Promise<Place[]> {
     return this.http.get(this.accTypeUrl)
                .toPromise()
                .then(response => {return response.json() as Place[]})

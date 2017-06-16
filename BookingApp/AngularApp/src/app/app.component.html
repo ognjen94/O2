@@ -13,20 +13,21 @@
   {{title}}
   <div *ngIf="!isLoggedIn()">
     <button (click)="logIn()">Log In!</button>
+    
   </div>
   <div *ngIf="isLoggedIn()">
     <button (click)="logOut()">Log Out!</button>
   </div>
-
-  <nav>
-      <a routerLink="/accommodations" routerLinkActive="active">Accommodations</a>
-    </nav>
-  <!--ol>
-    <li><a [routerLink]="['/home']">Home</a></li>
-    <li><a [routerLink]="['/about/1']">About</a></li>
-    <li><a [routerLink]="['/other']">Other</a></li>
-  </ol>
-
-  <router-outlet></router-outlet-->
+<button (click)="goToAccommodation()">acc In!</button>
+<button (click)="goToAccommodationType()">accType In!</button>
+  
 </h1>
+<!--html>
+  <body>
+      <nav><a routerLink="/accommodations" routerLinkActive="active">Accommodations</a></nav>
+
+  <router-outlet></router-outlet>
+  
+  </body>
+</html-->
 <router-outlet></router-outlet>

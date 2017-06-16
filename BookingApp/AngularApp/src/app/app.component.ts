@@ -15,7 +15,8 @@ import {
 export class AppComponent {
   title = 'app';
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService,
+    private router: Router) {
     
    }
 
@@ -30,4 +31,12 @@ export class AppComponent {
     isLoggedIn() : boolean{
         return this.authService.isLoggedIn();
     }
+
+    goToAccommodation(): void {
+    this.router.navigate(['/accommodations']);
+  }
+  
+    goToAccommodationType(): void {
+    this.router.navigate(['/accommodationType']);
+  }
 }

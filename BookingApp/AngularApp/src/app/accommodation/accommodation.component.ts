@@ -8,26 +8,16 @@ import { AccommodationService } from '../services/accommodation.service';
   templateUrl: './accommodation.component.html',
 })
 
-
-
-
 export class AccommodationComponent implements OnInit {
     accommodations : Accommodation[];
-        hidden: boolean = true;
     
   constructor(private accommodationService: AccommodationService) { 
-  }
-
-    back()
-  {
-
   }
 
   getAccommodations(): void {
       this.accommodationService
       .getAcc()
-      .then(acc => {this.accommodations = acc; debugger})
-      .catch(reason => alert(reason));
+      .then(acc => this.accommodations = acc);
   }
 
   ngOnInit() {
