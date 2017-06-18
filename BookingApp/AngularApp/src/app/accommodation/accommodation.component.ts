@@ -25,7 +25,7 @@ export class AccommodationComponent implements OnInit {
   getAccommodations(): void {
       this.accommodationService
       .getAcc()
-      .then(acc => {this.accommodations = acc; debugger});
+      .then(acc => this.accommodations = acc);
       
   }
 

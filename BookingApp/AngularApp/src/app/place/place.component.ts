@@ -17,7 +17,7 @@ export class PlaceComponent implements OnInit {
   getPlace(): void {
       this.placesService
       .getPlaces()
-      .then(plac => {this.places = plac; debugger});
+      .then(plac => this.places = plac);
   }
 
   ngOnInit() {

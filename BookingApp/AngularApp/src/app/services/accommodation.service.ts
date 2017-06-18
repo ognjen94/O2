@@ -25,7 +25,7 @@ export class AccommodationService {
 
     addAcc(acc : Accommodation): Promise<Accommodation> {
     return this.http
-      .post('http://localhost:54042/api/accommodation', JSON.stringify(acc), {headers: this.headers})
+      .post(this.accommodationsUrl, JSON.stringify(acc), {headers: this.headers})
       .toPromise()
       .then(res => res.json() as Accommodation)
       .catch(this.handleError);

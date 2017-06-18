@@ -17,7 +17,7 @@ export class AccommodationTypeComponent implements OnInit {
   getAccommodationTypes(): void {
       this.accommodationTypeService
       .getAccType()
-      .then(acc => {this.accommodationTypes = acc; debugger});
+      .then(acc => this.accommodationTypes = acc);
   }
 
   ngOnInit() {
