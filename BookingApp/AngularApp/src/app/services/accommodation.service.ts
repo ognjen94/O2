@@ -23,6 +23,14 @@ export class AccommodationService {
                .catch(this.handleError);
   }
 
+    addAcc(acc : Accommodation): Promise<Accommodation> {
+    return this.http
+      .post('http://localhost:54042/api/accommodation', JSON.stringify(acc), {headers: this.headers})
+      .toPromise()
+      .then(res => res.json() as Accommodation)
+      .catch(this.handleError);
+  }
+
     private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);

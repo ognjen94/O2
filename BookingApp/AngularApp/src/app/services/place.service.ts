@@ -11,12 +11,12 @@ export class PlaceService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
   //private accommodationsUrl = 'api/accommodation';  // URL to web api
-  private accTypeUrl = 'http://localhost:54042/api/Place';
+  private accTypeUrl = 'http://localhost:54042/api/Places';
 
   constructor(private http: Http) { }
 
-  getPlace(): Promise<Place[]> {
-    return this.http.get(this.accTypeUrl)
+  getPlaces(): Promise<Place[]> {
+    return this.http.get(this.accTypeUrl)//+"?$expand=region/country"
                .toPromise()
                .then(response => {return response.json() as Place[]})
                .catch(this.handleError);

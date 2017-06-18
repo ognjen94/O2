@@ -10,18 +10,26 @@ import { LoggedInGuard } from './logged-in.guard'
 import { AccommodationComponent } from './accommodation/accommodation.component';
 import { AccommodationService } from './services/accommodation.service'
 import { AccommodationTypeComponent } from './accommodation-type/accommodation-type.component';
-import { AccommodationTypeService } from './services/accommodation-type.service'
+import { AccommodationTypeService } from './services/accommodation-type.service';
+import { AddAccommodationComponent } from './add-accommodation/add-accommodation.component';
+import { PlaceComponent } from './place/place.component';
+import { PlaceService } from './services/place.service';
+
 
 const routes: Routes = [ 
   {path: 'accommodations', component: AccommodationComponent},
-  {path: 'accommodationType', component: AccommodationTypeComponent}
+  {path: 'accommodationType', component: AccommodationTypeComponent},
+  {path: 'add-accommodation', component: AddAccommodationComponent},
+  {path: 'place', component: PlaceComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     AccommodationComponent,
-    AccommodationTypeComponent
+    AccommodationTypeComponent,
+    AddAccommodationComponent,
+    PlaceComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +39,7 @@ const routes: Routes = [
   
   ],
   exports: [ RouterModule ],
-  providers: [AuthService, LoggedInGuard, AccommodationService, AccommodationTypeService],
+  providers: [AuthService, LoggedInGuard, AccommodationService, AccommodationTypeService, PlaceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

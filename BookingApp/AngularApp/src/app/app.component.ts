@@ -39,4 +39,7 @@ export class AppComponent {
     goToAccommodationType(): void {
     this.router.navigate(['/accommodationType']);
   }
+  goToPlace(): void {
+    this.router.navigate(['/place']);
+  }s
 }

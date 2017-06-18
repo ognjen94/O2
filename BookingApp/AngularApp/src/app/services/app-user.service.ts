@@ -15,7 +15,7 @@ export class AppUserService {
 
   constructor(private http: Http) { }
 
-  getUser(): Promise<AppUserService[]> {
+  getUser(): Promise<AppUser[]> {
     return this.http.get(this.appUserUrl)
                .toPromise()
                .then(response => {return response.json() as AppUser[]})
