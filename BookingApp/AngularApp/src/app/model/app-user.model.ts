@@ -1,9 +1,9 @@
 export class AppUser {
 
   constructor(
-    public id: number,
-    public username: string,
-    public email: string,
-    public password: string){
+    public Id: number,
+    public Username: string,
+    public Email: string,
+    public Password: string){
   }
 }

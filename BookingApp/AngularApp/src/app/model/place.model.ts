@@ -2,8 +2,8 @@ import { Region } from './region.model';
 
 export class Place{
     constructor(
-        public id: number,
-        public name: string,
+        public Id: number,
+        public Name: string,
         public region: Region){
     }
 }

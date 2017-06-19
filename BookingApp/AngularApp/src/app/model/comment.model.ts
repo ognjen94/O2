@@ -3,9 +3,9 @@ import { AppUser } from './app-user.model';
 
 export class Comment {
   constructor(
-    public id: number,
-    public grade: number,
-    public text: string,
+    public Id: number,
+    public Grade: number,
+    public Text: string,
     public user: AppUser,
     public accommodation: Accommodation){
     }

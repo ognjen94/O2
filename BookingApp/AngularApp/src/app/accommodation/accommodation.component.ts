@@ -17,6 +17,7 @@ import { AccommodationService } from '../services/accommodation.service';
 
 export class AccommodationComponent implements OnInit {
     accommodations : Accommodation[];
+    selectedAcc : Accommodation;
     
   constructor(private accommodationService: AccommodationService,
     private router: Router) { 
@@ -27,6 +28,23 @@ export class AccommodationComponent implements OnInit {
       .getAcc()
       .then(acc => this.accommodations = acc);
       
+  }
+
+  deleteAccommodation(acc : Accommodation) : void {
+    this.accommodationService
+    .deleteAcc(acc)
+    .then(() => {
+      this.accommodations = this.accommodations.filter(a => a !== acc);
+      if (this.selectedAcc === acc) {this.selectedAcc = null; }
+    });
+  }
+
+  updateAccommodation(acc : Accommodation) : void {
+    
+  }
+
+  onSelect(acc : Accommodation) : void {
+    this.selectedAcc = acc; debugger
   }
 
   goToAddAccommodation(): void {

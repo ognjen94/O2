@@ -2,7 +2,8 @@
 
 <table class="accommodation" style="height: 21px;" width="427" border="1">
   <tbody>
-  <tr *ngFor="let accommodation of accommodations">
+  <tr *ngFor="let accommodation of accommodations" (click)="onSelect(accommodation)"
+    [class.selected]="accommodation === selectedAcc">
 
   <td style="text-align:center;">{{accommodation.Name}}</td>
 
@@ -13,4 +14,6 @@
 
 <button (click)="goToAddAccommodation()">Add</button>
 <button (click)="updateAccommodation()">Update</button>
-<button (click)="deleteAccommodation()">Delete</button>
+<div *ngIf="selectedAcc">
+  <button (click)="deleteAccommodation(selectedAcc)">Delete</button>
+</div>
