@@ -19,7 +19,14 @@ export class AccommodationService {
     return this.http.get(this.accommodationsUrl+"?$expand=owner,place/region/country,accommodationType")
                .toPromise()
                .then(response => {return response.json() as Accommodation[]})
-              // SRANJEEE .then(response => { response.json().data as Accommodation[]; debugger })
+               .catch(this.handleError);
+  }
+
+  returnAcc(id : number): Promise<Accommodation> {
+    const url = `${this.accommodationsUrl}/${id}`
+    return this.http.get(url)
+               .toPromise()
+               .then(response => {return response.json() as Accommodation})
                .catch(this.handleError);
   }
 
@@ -33,7 +40,6 @@ export class AccommodationService {
 
   deleteAcc(acc : Accommodation): Promise<Accommodation> {
     const url = `${this.accommodationsUrl}/${acc.Id}`
-    debugger
     return this.http
       .delete(url, {headers: this.headers})
       .toPromise()
@@ -41,7 +47,14 @@ export class AccommodationService {
       .catch(this.handleError);
   }
 
-  
+  updateAcc(acc : Accommodation): Promise<Accommodation> {
+    const url = `${this.accommodationsUrl}/${acc.Id}`
+    return this.http
+      .put(url, JSON.stringify(acc), {headers: this.headers})
+      .toPromise()
+      .then(() => acc)
+      .catch(this.handleError);
+  }
 
     private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only

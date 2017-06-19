@@ -13,7 +13,8 @@
 </table>
 
 <button (click)="goToAddAccommodation()">Add</button>
-<button (click)="updateAccommodation()">Update</button>
+
 <div *ngIf="selectedAcc">
   <button (click)="deleteAccommodation(selectedAcc)">Delete</button>
+  <button (click)="goToUpdateAccommodation()">Update</button>
 </div>

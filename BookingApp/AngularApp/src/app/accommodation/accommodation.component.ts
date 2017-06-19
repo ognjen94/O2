@@ -39,8 +39,8 @@ export class AccommodationComponent implements OnInit {
     });
   }
 
-  updateAccommodation(acc : Accommodation) : void {
-    
+  goToUpdateAccommodation(acc : Accommodation) : void {
+    this.router.navigate(['/update-accommodation', this.selectedAcc.Id]);
   }
 
   onSelect(acc : Accommodation) : void {
