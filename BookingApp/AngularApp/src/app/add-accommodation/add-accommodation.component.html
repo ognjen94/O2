@@ -25,20 +25,20 @@
     </div> 
     <div>
      <label for="AccommodationType">AccommodationType</label>
-     <select class="form-control" name="AccommodationType" ngModel>
-        <option *ngFor="let at of accommodationTypes" value="{{at}}">{{at.Name}}</option>
+     <select class="form-control" name="AccommodationType" ngModel><!--required [(ngModel)]="AccommodationTypeId"-->
+        <option *ngFor="let at of accommodationTypes" [ngValue]="at">{{at.Name}}</option>
      </select>
     </div>
     <div>
      <label for="Place">Place</label>
      <select class="form-control" name="Place" ngModel>
-        <option *ngFor="let p of places" value="{{p}}">{{p.Name}}</option>
+        <option *ngFor="let p of places" [ngValue]="p">{{p.Name}}</option>
      </select>
     </div>
 	<div>
      <label for="User">Owner</label>
      <select class="form-control" name="Owner" ngModel>
-        <option *ngFor="let u of appUsers" value="{{u}}">{{u.Username}}</option>
+        <option *ngFor="let u of appUsers" [ngValue]="u">{{u.Username}}</option>
      </select>
     </div>
      <input type="submit" value="Submit">

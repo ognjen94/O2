@@ -80,6 +80,10 @@ namespace BookingApp.Controllers
                 return BadRequest(ModelState);
             }
 
+            /*database.AppUsers.Attach(acc.owner);
+            database.Places.Attach(acc.place);
+            database.AccommodationTypes.Attach(acc.accommodationType);*/
+
             database.Accommodations.Add(acc);
             database.SaveChanges();
 

@@ -37,6 +37,8 @@ export class AddAccommodationComponent implements OnInit {
   }
 
       addAccommodation(acc: Accommodation, form: NgForm): void {
+        //console.log(acc.accommodationType.name);
+        
         this.AccommodationService.addAcc(acc);debugger
   }
 

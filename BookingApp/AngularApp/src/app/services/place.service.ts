@@ -16,7 +16,7 @@ export class PlaceService {
   constructor(private http: Http) { }
 
   getPlaces(): Promise<Place[]> {
-    return this.http.get(this.accTypeUrl)//+"?$expand=region/country"
+    return this.http.get(this.accTypeUrl+"?$expand=region/country")//+"?$expand=region/country"
                .toPromise()
                .then(response => {return response.json() as Place[]})
                .catch(this.handleError);
