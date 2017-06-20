@@ -22,6 +22,32 @@ export class AppUserService {
                .catch(this.handleError);
   }
 
+    addAppUser(user :AppUser): Promise<AppUser> {
+    return this.http
+      .post(this.appUserUrl, JSON.stringify(user), {headers: this.headers})
+      .toPromise()
+      .then(res => res.json() as AppUser)
+      .catch(this.handleError);
+  }
+
+  deleteAppUser(user : AppUser): Promise<AppUser> {
+    const url = `${this.appUserUrl}/${user.Id}`
+    return this.http
+      .delete(url, {headers: this.headers})
+      .toPromise()
+      .then(() => null)
+      .catch(this.handleError);
+  }
+
+  updateAppUser(user : AppUser): Promise<AppUser> {
+    const url = `${this.appUserUrl}/${user.Id}`
+    return this.http
+      .put(url, JSON.stringify(user), {headers: this.headers})
+      .toPromise()
+      .then(() => user)
+      .catch(this.handleError);
+  }
+
     private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);

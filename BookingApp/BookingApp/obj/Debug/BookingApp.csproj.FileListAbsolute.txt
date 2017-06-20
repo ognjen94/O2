@@ -373,5 +373,5 @@ C:\Users\student\Desktop\repo\O2\BookingApp\BookingApp\bin\ru\System.Spatial.res
 C:\Users\student\Desktop\repo\O2\BookingApp\BookingApp\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\student\Desktop\repo\O2\BookingApp\BookingApp\bin\zh-Hant\System.Spatial.resources.dll
 C:\Users\student\Desktop\repo\O2\BookingApp\BookingApp\obj\Debug\BookingApp.Migrations.Model.resources
-C:\Users\student\Desktop\New folder\O2\BookingApp\BookingApp\obj\Debug\BookingApp.csprojResolveAssemblyReference.cache
 C:\Users\student\Desktop\New folder\O2\BookingApp\BookingApp\obj\Debug\BookingApp.Migrations.ModelUpdate.resources
+C:\Users\student\Desktop\New folder\O2\BookingApp\BookingApp\obj\Debug\BookingApp.csprojResolveAssemblyReference.cache

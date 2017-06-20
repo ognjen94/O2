@@ -1,0 +1,20 @@
+<h2>Users</h2>
+
+<table class="user" style="height: 21px;" width="427" border="1">
+  <tbody>
+  <tr *ngFor="let user of appUsers" (click)="onSelect(user)"
+    [class.selected]="user === selectedUser">
+
+  <td style="text-align:center;">{{user.Username}}</td>
+
+  <td style="text-align:center;">{{user.Email}}</td>
+</tr>
+</tbody>
+</table>
+
+<button (click)="goToAddUser()">Add</button>
+
+<div *ngIf="selectedUser">
+  <button (click)="deleteUser(selectedUser)">Delete</button>
+  <button (click)="goToUpdateUser(selectedUser)">Update</button>
+</div>

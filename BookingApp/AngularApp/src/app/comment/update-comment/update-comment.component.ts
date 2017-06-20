@@ -15,7 +15,7 @@ import { Accommodation } from '../../model/accommodation.model';
   templateUrl: './update-comment.component.html',
   providers: [CommentService, AppUserService, AccommodationService]
 })
-export class UpdateRegionComponent implements OnInit {
+export class UpdateCommentComponent implements OnInit {
   comment: Comment;
   id: number;
   appUsers: AppUser[];

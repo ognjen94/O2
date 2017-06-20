@@ -1,0 +1,15 @@
+<form #f="ngForm" (ngSubmit)="addUser(f.value, f)">
+    <div>
+      <label for="Username">Username</label>
+      <input type="text" name="Username" ngModel>
+    </div>
+    <div>
+      <label for="Password">Password</label>
+      <input type="text" name="Password" ngModel>
+    </div> 
+     <div>
+      <label for="Email">Email</label>
+      <input type="text" name="Email" ngModel>
+    </div>
+     <input type="submit" value="Submit">
+  </form>

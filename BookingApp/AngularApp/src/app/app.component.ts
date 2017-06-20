@@ -58,4 +58,11 @@ export class AppComponent {
       goToRoomReservation(): void {
     this.router.navigate(['/room-reservation']);
   }
+        goToComment(): void {
+    this.router.navigate(['/comment']);
+  }
+
+          goToUser(): void {
+    this.router.navigate(['/app-user']);
+  }
 }
