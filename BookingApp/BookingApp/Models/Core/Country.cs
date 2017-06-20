@@ -11,8 +11,8 @@ namespace System {
 
 		private int id;
 		private string name;
-        [JsonIgnore]
         private int code;
+        [JsonIgnore]
         public List<Region> m_Region { get; set; }
 
 		public Country(){

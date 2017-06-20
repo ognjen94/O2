@@ -1,0 +1,11 @@
+<form #f="ngForm" (ngSubmit)="addCountry(f.value, f)">
+    <div>
+      <label for="Name">Name</label>
+      <input type="text" name="Name" ngModel>
+    </div>
+        <div>
+      <label for="Code">Code</label>
+      <input type="text" name="Code" ngModel>
+    </div>
+     <input type="submit" value="Submit">
+  </form>

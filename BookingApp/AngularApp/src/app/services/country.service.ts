@@ -11,15 +11,41 @@ export class CountryService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
   //private accommodationsUrl = 'api/accommodation';  // URL to web api
-  private accTypeUrl = 'http://localhost:54042/api/Country';
+  private countryUrl = 'http://localhost:54042/api/Country';
 
   constructor(private http: Http) { }
 
   getCountry(): Promise<Country[]> {
-    return this.http.get(this.accTypeUrl)
+    return this.http.get(this.countryUrl)
                .toPromise()
                .then(response => {return response.json() as Country[]})
                .catch(this.handleError);
+  }
+
+    addCountry(country : Country): Promise<Country> {
+    return this.http
+      .post(this.countryUrl, JSON.stringify(country), {headers: this.headers})
+      .toPromise()
+      .then(res => res.json() as Country)
+      .catch(this.handleError);
+  }
+
+    updateCounty(country : Country): Promise<Country> {
+    const url = `${this.countryUrl}/${country.Id}`
+    return this.http
+      .put(url, JSON.stringify(country), {headers: this.headers})
+      .toPromise()
+      .then(() => country)
+      .catch(this.handleError);
+  }
+
+    deleteCountry(country : Country): Promise<Country> {
+    const url = `${this.countryUrl}/${country.Id}`
+    return this.http
+      .delete(url, {headers: this.headers})
+      .toPromise()
+      .then(() => null)
+      .catch(this.handleError);
   }
 
     private handleError(error: any): Promise<any> {

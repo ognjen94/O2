@@ -1,0 +1,20 @@
+<h2>Country</h2>
+
+<table class="country" style="height: 21px;" width="427" border="1">
+  <tbody>
+  <tr *ngFor="let country of countries" (click)="onSelect(country)"
+    [class.selected]="country === selectedCountry">
+
+  <td style="text-align:center;">{{country.Name}}</td>
+  <td style="text-align:center;">{{country.Code}}</td>
+
+</tr>
+</tbody>
+</table>
+
+<button (click)="goToAddCountry()">Add</button>
+
+<div *ngIf="selectedCountry">
+  <button (click)="deleteCountry(selectedCountry)">Delete</button>
+  <button (click)="goToUpdateCountry(selectedCountry)">Update</button>
+</div>

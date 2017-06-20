@@ -45,5 +45,9 @@ export class AppComponent {
   }
   goToPlace(): void {
     this.router.navigate(['/place']);
-  }s
+  }
+
+    goToCountry(): void {
+    this.router.navigate(['/country']);
+  }
 }

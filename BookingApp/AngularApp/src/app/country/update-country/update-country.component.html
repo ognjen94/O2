@@ -1,0 +1,15 @@
+<div *ngIf="country">
+  <h2>{{country.Name}} details!</h2>
+  <div>
+    <label>id: </label>{{country.Id}}</div>
+  <div>
+    <label>Name: </label>
+    <input [(ngModel)]="country.Name" placeholder="Name" />
+  </div>
+  <div>
+    <label>Code: </label>
+    <input [(ngModel)]="country.Code" placeholder="Code" />
+  </div>
+  <button (click)="goBack()">Back</button>
+  <button (click)="updateCountry()">Save</button>
+</div>
