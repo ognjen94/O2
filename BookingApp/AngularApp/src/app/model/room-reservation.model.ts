@@ -1,8 +1,8 @@
 export class RoomReservation{
     constructor(
         public Id: number,
-        public StartDate: Date,
-        public EndDate: Date,
-        public TimeStamp: Date){
+        public StartDate: string,
+        public EndDate: string,
+        public Timestamp: string){
         }
 }

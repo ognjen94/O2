@@ -1,0 +1,15 @@
+<form #f="ngForm" (ngSubmit)="addRoom(f.value, f)">
+    <div>
+      <label for="StartDate">StartDate</label>
+      <input type="text" name="StartDate" ngModel>
+    </div>
+     <div>
+      <label for="EndDate">EndDate</label>
+      <input type="text" name="EndDate" ngModel>
+    </div>      
+    <div>
+      <label for="Timestamp">TimeStamp</label>
+      <input type="text" name="Timestamp" ngModel>
+    </div>
+     <input type="submit" value="Submit">
+  </form>

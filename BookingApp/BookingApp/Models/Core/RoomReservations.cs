@@ -8,9 +8,9 @@ namespace System {
 	public class RoomReservation {
 
         private int id;
-		private DateTime? endDate;
-		private DateTime? startDate;
-		private DateTime? timestamp;
+		private string endDate;
+		private string startDate;
+		private string timestamp;
 
 		public RoomReservation(){
 
@@ -32,7 +32,7 @@ namespace System {
             }
         }
 
-        public DateTime? EndDate
+        public string EndDate
         {
 			get{
 				return endDate;
@@ -42,7 +42,7 @@ namespace System {
 			}
 		}
 
-		public DateTime? StartDate
+		public string StartDate
         {
 			get{
 				return startDate;
@@ -52,7 +52,8 @@ namespace System {
 			}
 		}
 
-		public DateTime? Timestamp{
+		public string Timestamp
+        {
 			get{
 				return timestamp;
 			}

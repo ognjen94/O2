@@ -1,0 +1,18 @@
+<div *ngIf="room">
+  <div>
+    <label>id: </label>{{room.Id}}</div>
+  <div>
+    <label>StartDate: </label>
+    <input [(ngModel)]="room.StartDate" placeholder="StartDate" />
+  </div>
+  <div>
+    <label>EndDate: </label>
+    <input [(ngModel)]="room.EndDate" placeholder="EndDate" />
+  </div>
+    <div>
+    <label>Timestamp: </label>
+    <input [(ngModel)]="room.Timestamp" placeholder="Timestamp" />
+  </div>
+  <button (click)="goBack()">Back</button>
+  <button (click)="updateRoom()">Save</button>
+</div>

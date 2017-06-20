@@ -54,4 +54,8 @@ export class AppComponent {
     goToRoom(): void {
     this.router.navigate(['/room']);
   }
+
+      goToRoomReservation(): void {
+    this.router.navigate(['/room-reservation']);
+  }
 }

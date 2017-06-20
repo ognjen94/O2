@@ -100,9 +100,9 @@ namespace BookingApp.Migrations
 
             RoomReservation roomres = new RoomReservation();
             //roomres.Id = 1;
-            roomres.StartDate = DateTime.Now;
-            roomres.EndDate = DateTime.Now;
-            roomres.Timestamp = DateTime.Now;
+            roomres.StartDate = "11.5.2017";
+            roomres.EndDate = "16.6.2017";
+            roomres.Timestamp = "10.5.2017";
 
             AccommodationType at = new AccommodationType();
             //at.Id = 2;

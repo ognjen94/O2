@@ -17,7 +17,7 @@ namespace BookingApp.Controllers
         private BAContext database = new BAContext();
 
         // GET: api/Comments
-        [EnableQuery]
+        [EnableQuery(MaxExpansionDepth = 5)]
         public IQueryable<Comment> GetComments()
         {
             return database.Comments;
@@ -78,6 +78,9 @@ namespace BookingApp.Controllers
             {
                 return BadRequest(ModelState);
             }
+
+            database.AppUsers.Attach(comm.user);
+            database.Accommodations.Attach(comm.accommodation);
 
             database.Comments.Add(comm);
             database.SaveChanges();

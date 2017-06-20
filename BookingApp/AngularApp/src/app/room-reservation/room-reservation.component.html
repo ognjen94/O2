@@ -1,0 +1,20 @@
+<h2>RoomReservation</h2>
+
+<table class="roomreservation" style="height: 21px;" width="427" border="1">
+  <tbody>
+  <tr *ngFor="let roomreservation of roomres" (click)="onSelect(roomreservation)"
+    [class.selected]="roomreservation === selectedRoom ">
+
+  <td style="text-align:center;">{{roomreservation.StartDate}}</td>
+  <td style="text-align:center;">{{roomreservation.EndDate}}</td>
+
+</tr>
+</tbody>
+</table>
+
+<button (click)="goToAddRoomRes()">Add</button>
+
+<div *ngIf="selectedRoom">
+  <button (click)="deleteRoomRes(selectedRoom)">Delete</button>
+  <button (click)="goToUpdateRoomRes(selectedRoom)">Update</button>
+</div>
