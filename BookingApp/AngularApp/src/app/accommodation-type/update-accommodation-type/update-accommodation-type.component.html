@@ -1,0 +1,11 @@
+<div *ngIf="accType">
+  <h2>{{accType.Name}} details!</h2>
+  <div>
+    <label>id: </label>{{accType.Id}}</div>
+  <div>
+    <label>Name: </label>
+    <input [(ngModel)]="accType.Name" placeholder="Name" />
+  </div>
+  <button (click)="goBack()">Back</button>
+  <button (click)="updateAccommodationType()">Save</button>
+</div>

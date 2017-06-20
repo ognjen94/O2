@@ -17,6 +17,8 @@ import { PlaceService } from './services/place.service';
 import { AddPlaceComponent } from './place/add-place/add-place.component';
 import { UpdatePlaceComponent } from './place/update-place/update-place.component';
 import { UpdateAccommodationComponent } from './accommodation/update-accommodation/update-accommodation.component';
+import { AddAccommodationTypeComponent } from './accommodation-type/add-accommodation-type/add-accommodation-type.component';
+import {UpdateAccommodationTypeComponent} from './accommodation-type/update-accommodation-type/update-accommodation-type.component';
 
 
 const routes: Routes = [ 
@@ -26,7 +28,9 @@ const routes: Routes = [
   {path: 'place', component: PlaceComponent},
   {path: 'add-place', component: AddPlaceComponent},
   {path: 'update-place/:Id', component: UpdatePlaceComponent},
-  {path: 'update-accommodation/:Id', component: UpdateAccommodationComponent}
+  {path: 'update-accommodation/:Id', component: UpdateAccommodationComponent},
+  {path: 'add-accommodation-type', component: AddAccommodationTypeComponent},
+  {path: 'update-accommodation-type/:Id', component: UpdateAccommodationTypeComponent}
 ];
 
 @NgModule({
@@ -38,7 +42,9 @@ const routes: Routes = [
     PlaceComponent,
     AddPlaceComponent,
     UpdatePlaceComponent,
-    UpdateAccommodationComponent
+    UpdateAccommodationComponent,
+    UpdateAccommodationTypeComponent,
+    AddAccommodationTypeComponent
   ],
   imports: [
     BrowserModule,

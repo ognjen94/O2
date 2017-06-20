@@ -2,10 +2,18 @@
 
 <table class="accommodation-type" style="height: 21px;" width="427" border="1">
   <tbody>
-  <tr *ngFor="let accommodationType of accommodationTypes">
+  <tr *ngFor="let accommodationType of accommodationTypes" (click)="onSelect(accommodationType)"
+    [class.selected]="accommodationType === selectedAccType">
 
   <td style="text-align:center;">{{accommodationType.Name}}</td>
 
 </tr>
 </tbody>
 </table>
+
+<button (click)="goToAddAccommodationType()">Add</button>
+
+<div *ngIf="selectedAccType">
+  <button (click)="deleteAccommodationType(selectedAccType)">Delete</button>
+  <button (click)="goToUpdateAccommodation(selectedAccType)">Update</button>
+</div>

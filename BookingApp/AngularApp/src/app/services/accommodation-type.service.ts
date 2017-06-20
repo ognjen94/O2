@@ -22,6 +22,32 @@ export class AccommodationTypeService {
                .catch(this.handleError);
   }
 
+    addAccType(accType : AccommodationType): Promise<AccommodationType> {
+    return this.http
+      .post(this.accTypeUrl, JSON.stringify(accType), {headers: this.headers})
+      .toPromise()
+      .then(res => res.json() as AccommodationType)
+      .catch(this.handleError);
+  }
+
+    deleteAccType(accType : AccommodationType): Promise<AccommodationType> {
+    const url = `${this.accTypeUrl}/${accType.Id}`
+    return this.http
+      .delete(url, {headers: this.headers})
+      .toPromise()
+      .then(() => null)
+      .catch(this.handleError);
+  }
+
+    updateAccType(accType : AccommodationType): Promise<AccommodationType> {
+    const url = `${this.accTypeUrl}/${accType.Id}`
+    return this.http
+      .put(url, JSON.stringify(accType), {headers: this.headers})
+      .toPromise()
+      .then(() => accType)
+      .catch(this.handleError);
+  }
+
     private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);
