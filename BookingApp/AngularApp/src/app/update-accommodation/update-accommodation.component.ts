@@ -15,14 +15,23 @@ import { AccommodationType } from '../model/accommodation-type.model';
 
 @Component({
   selector: 'update-accommodation',
-  templateUrl: './update-accommodation.component.html'
+  templateUrl: './update-accommodation.component.html',
+  providers: [AccommodationService, PlaceService, AccommodationTypeService, AppUserService]
 })
 export class UpdateAccommodationComponent implements OnInit {
+  accs: Accommodation[];
   acc: Accommodation;
   id: number;
+  places: Place[];
+  appUsers: AppUser[];
+  accommodationTypes: AccommodationType[];
+  error: any;
 
   constructor(
     private accommodationService: AccommodationService,
+    private PlaceService: PlaceService, 
+    private AccommodationTypeService: AccommodationTypeService,
+    private AppUserService: AppUserService,
     private route: ActivatedRoute,
     private location: Location
   ) {
@@ -30,8 +39,11 @@ export class UpdateAccommodationComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.accommodationService.returnAcc(this.id)
-    .then(acc => {this.acc = acc; debugger})
+    this.accommodationService.getAcc()
+    .then(acc => {this.accs = acc; debugger; this.acc = this.accs.find(ac => ac.Id == this.id)});
+    this.AccommodationTypeService.getAccType().then(accTypes => this.accommodationTypes = accTypes).catch(error => this.error = error);
+    this.PlaceService.getPlaces().then(place => this.places = place).catch(error => this.error = error);
+    this.AppUserService.getUser().then(appUser => this.appUsers = appUser).catch(error => this.error = error);
       debugger
 
       /*this.route.params

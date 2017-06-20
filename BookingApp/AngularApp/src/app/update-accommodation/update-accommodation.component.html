@@ -3,9 +3,51 @@
   <div>
     <label>id: </label>{{acc.Id}}</div>
   <div>
-    <label>name: </label>
+    <label>Name: </label>
     <input [(ngModel)]="acc.Name" placeholder="Name" />
-   </div>
+  </div>
+  <div>
+    <label>Description: </label>
+    <input [(ngModel)]="acc.Description" placeholder="Description" />
+  </div>
+  <div>
+    <label>Address: </label>
+    <input [(ngModel)]="acc.Address" placeholder="Address" />
+    </div>
+  <div>
+    <label>Longitude: </label>
+    <input [(ngModel)]="acc.Longitude" placeholder="Longitude" />
+    </div>
+  <div>
+    <label>Latitude: </label>
+    <input [(ngModel)]="acc.Latitude" placeholder="Latitude" />
+    </div>
+  <div>
+    <label>ImageURL: </label>
+    <input [(ngModel)]="acc.ImageURL" placeholder="ImageURL" />
+    </div>
+  <div>
+    <label>AverageGrade: </label>
+    <input [(ngModel)]="acc.AverageGrade" placeholder="AverageGrade" />
+    </div>
+  <div>
+     <label for="AccommodationType">AccommodationType</label>
+     <select class="form-control" name="AccommodationType" ngModel><!--required [(ngModel)]="AccommodationTypeId"-->
+        <option *ngFor="let at of accommodationTypes" [selected]="acc.accommodationType.Id === at.Id" [ngValue]="at">{{at.Name}}</option>
+     </select>
+    </div>
+    <div>
+     <label for="Place">Place</label>
+     <select class="form-control" name="Place" ngModel>
+        <option *ngFor="let p of places" [ngValue]="p">{{p.Name}}</option>
+     </select>
+    </div>
+	<div>
+     <label for="User">Owner</label>
+     <select class="form-control" name="Owner" ngModel>
+        <option *ngFor="let u of appUsers" [ngValue]="u">{{u.Username}}</option>
+     </select>
+    </div>
   <button (click)="goBack()">Back</button>
   <button (click)="updateAccommodation()">Save</button>
 </div>

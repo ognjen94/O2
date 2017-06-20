@@ -20,7 +20,7 @@ namespace BookingApp.Controllers
         [EnableQuery]
         public IQueryable<Place> GetPlaces()
         {
-            return database.Places;
+            return database.Places.Include("Region");
         }
 
         // GET: api/Places/5
@@ -78,6 +78,8 @@ namespace BookingApp.Controllers
             {
                 return BadRequest(ModelState);
             }
+
+            database.Regions.Attach(place.region);
 
             database.Places.Add(place);
             database.SaveChanges();
