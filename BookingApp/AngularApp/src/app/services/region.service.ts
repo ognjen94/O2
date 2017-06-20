@@ -11,15 +11,41 @@ export class RegionService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
   //private accommodationsUrl = 'api/accommodation';  // URL to web api
-  private roomUrl = 'http://localhost:54042/api/Region';
+  private regionUrl = 'http://localhost:54042/api/Region';
 
   constructor(private http: Http) { }
 
   getRegion(): Promise<Region[]> {
-    return this.http.get(this.roomUrl+"?$expand=country")
+    return this.http.get(this.regionUrl+"?$expand=country")
                .toPromise()
                .then(response => {return response.json() as Region[]})
                .catch(this.handleError);
+  }
+
+  addRegion(r : Region): Promise<Region> {
+    return this.http
+      .post(this.regionUrl, JSON.stringify(r), {headers: this.headers})
+      .toPromise()
+      .then(res => res.json() as Region)
+      .catch(this.handleError);
+  }
+
+    deleteRegion(r : Region): Promise<Region> {
+    const url = `${this.regionUrl}/${r.Id}`
+    return this.http
+      .delete(url, {headers: this.headers})
+      .toPromise()
+      .then(() => null)
+      .catch(this.handleError);
+  }
+
+    updateRegion(r : Region): Promise<Region> {
+    const url = `${this.regionUrl}/${r.Id}`
+    return this.http
+      .put(url, JSON.stringify(r), {headers: this.headers})
+      .toPromise()
+      .then(() => r)
+      .catch(this.handleError);
   }
 
     private handleError(error: any): Promise<any> {

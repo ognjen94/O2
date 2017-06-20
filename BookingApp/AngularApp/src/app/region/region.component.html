@@ -1,0 +1,19 @@
+<h2>Regions</h2>
+
+<table class="region" style="height: 21px;" width="427" border="1">
+  <tbody>
+  <tr *ngFor="let region of regions"(click)="onSelect(region)"
+    [class.selected]="region === selectedRegion">
+
+  <td style="text-align:center;">{{region.Name}}</td>
+
+</tr>
+</tbody>
+</table>
+
+<button (click)="goToAddRegion()">Add</button>
+
+<div *ngIf="selectedRegion">
+  <button (click)="deleteRegion(selectedRegion)">Delete</button>
+  <button (click)="goToUpdateRegion(selectedRegion)">Update</button>
+</div>
