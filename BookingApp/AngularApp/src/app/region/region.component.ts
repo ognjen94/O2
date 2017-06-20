@@ -26,7 +26,7 @@ export class RegionComponent implements OnInit {
       .then(r => {this.regions = r; debugger});
   }
 
-  deletePlace(r : Region) : void {
+  deleteRegion(r : Region) : void {
     this.regionService
     .deleteRegion(r)
     .then(() => {
