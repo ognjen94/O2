@@ -24,6 +24,10 @@
       <input type="text" name="ImageURL" ngModel>
     </div> 
     <div>
+      <label for="AverageGrade">ImageURL</label>
+      <input type="text" name="AverageGrade" ngModel>
+    </div> 
+    <div>
      <label for="AccommodationType">AccommodationType</label>
      <select class="form-control" name="AccommodationType" ngModel><!--required [(ngModel)]="AccommodationTypeId"-->
         <option *ngFor="let at of accommodationTypes" [ngValue]="at">{{at.Name}}</option>

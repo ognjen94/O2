@@ -11,15 +11,41 @@ export class PlaceService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
   //private accommodationsUrl = 'api/accommodation';  // URL to web api
-  private accTypeUrl = 'http://localhost:54042/api/Places';
+  private placeUrl = 'http://localhost:54042/api/Places';
 
   constructor(private http: Http) { }
 
   getPlaces(): Promise<Place[]> {
-    return this.http.get(this.accTypeUrl+"?$expand=region/country")//+"?$expand=region/country"
+    return this.http.get(this.placeUrl+"?$expand=region/country")//+"?$expand=region/country"
                .toPromise()
                .then(response => {return response.json() as Place[]})
                .catch(this.handleError);
+  }
+
+    addPlace(place : Place): Promise<Place> {
+    return this.http
+      .post(this.placeUrl, JSON.stringify(place), {headers: this.headers})
+      .toPromise()
+      .then(res => res.json() as Place)
+      .catch(this.handleError);
+  }
+
+    deletePlace(place : Place): Promise<Place> {
+    const url = `${this.placeUrl}/${place.Id}`
+    return this.http
+      .delete(url, {headers: this.headers})
+      .toPromise()
+      .then(() => null)
+      .catch(this.handleError);
+  }
+
+    updatePlace(place : Place): Promise<Place> {
+    const url = `${this.placeUrl}/${place.Id}`
+    return this.http
+      .put(url, JSON.stringify(place), {headers: this.headers})
+      .toPromise()
+      .then(() => place)
+      .catch(this.handleError);
   }
 
     private handleError(error: any): Promise<any> {

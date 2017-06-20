@@ -2,10 +2,18 @@
 
 <table class="places" style="height: 21px;" width="427" border="1">
   <tbody>
-  <tr *ngFor="let place of places">
+  <tr *ngFor="let place of places"(click)="onSelect(place)"
+    [class.selected]="place === selectedPlace">
 
   <td style="text-align:center;">{{place.Name}}</td>
 
 </tr>
 </tbody>
 </table>
+
+<button (click)="goToAddPlace()">Add</button>
+
+<div *ngIf="selectedPlace">
+  <button (click)="deletePlace(selectedPlace)">Delete</button>
+  <button (click)="goToUpdatePlace(selectedPlace)">Update</button>
+</div>

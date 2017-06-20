@@ -1,0 +1,13 @@
+<form #f="ngForm" (ngSubmit)="addPlace(f.value, f)">
+    <div>
+      <label for="Name">Name</label>
+      <input type="text" name="Name" ngModel>
+    </div>
+    <div>
+     <label for="Region">Region</label>
+     <select class="form-control" name="Region" ngModel><!--required [(ngModel)]="AccommodationTypeId"-->
+        <option *ngFor="let r of region" [ngValue]="r">{{r.Name}}</option>
+     </select>
+    </div>
+     <input type="submit" value="Submit">
+  </form>

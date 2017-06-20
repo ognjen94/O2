@@ -1,0 +1,17 @@
+<div *ngIf="place">
+  <h2>{{place.Name}} details!</h2>
+  <div>
+    <label>id: </label>{{place.Id}}</div>
+  <div>
+    <label>Name: </label>
+    <input [(ngModel)]="place.Name" placeholder="Name" />
+  </div>
+    <div>
+     <label for="Region">Region</label>
+     <select class="form-control" name="Region" ngModel>
+        <option *ngFor="let r of regions" [selected]="place.region.Id === r.Id" [ngValue]="r">{{r.Name}}</option>
+     </select>
+    </div>
+  <button (click)="goBack()">Back</button>
+  <button (click)="updatePlace()">Save</button>
+</div>

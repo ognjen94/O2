@@ -11,10 +11,12 @@ import { AccommodationComponent } from './accommodation/accommodation.component'
 import { AccommodationService } from './services/accommodation.service'
 import { AccommodationTypeComponent } from './accommodation-type/accommodation-type.component';
 import { AccommodationTypeService } from './services/accommodation-type.service';
-import { AddAccommodationComponent } from './add-accommodation/add-accommodation.component';
+import { AddAccommodationComponent } from './accommodation/add-accommodation/add-accommodation.component';
 import { PlaceComponent } from './place/place.component';
 import { PlaceService } from './services/place.service';
-import { UpdateAccommodationComponent } from './update-accommodation/update-accommodation.component';
+import { AddPlaceComponent } from './place/add-place/add-place.component';
+import { UpdatePlaceComponent } from './place/update-place/update-place.component';
+import { UpdateAccommodationComponent } from './accommodation/update-accommodation/update-accommodation.component';
 
 
 const routes: Routes = [ 
@@ -22,6 +24,8 @@ const routes: Routes = [
   {path: 'accommodationType', component: AccommodationTypeComponent},
   {path: 'add-accommodation', component: AddAccommodationComponent},
   {path: 'place', component: PlaceComponent},
+  {path: 'add-place', component: AddPlaceComponent},
+  {path: 'update-place/:Id', component: UpdatePlaceComponent},
   {path: 'update-accommodation/:Id', component: UpdateAccommodationComponent}
 ];
 
@@ -32,6 +36,8 @@ const routes: Routes = [
     AccommodationTypeComponent,
     AddAccommodationComponent,
     PlaceComponent,
+    AddPlaceComponent,
+    UpdatePlaceComponent,
     UpdateAccommodationComponent
   ],
   imports: [
