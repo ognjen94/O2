@@ -17,7 +17,7 @@ namespace BookingApp.Controllers
         private BAContext database = new BAContext();
 
         // GET: api/Rooms
-        [EnableQuery]
+        [EnableQuery(MaxExpansionDepth = 5)]
         public IQueryable<Room> GetRooms()
         {
             return database.Rooms;
@@ -78,6 +78,8 @@ namespace BookingApp.Controllers
             {
                 return BadRequest(ModelState);
             }
+
+            database.Accommodations.Attach(room.accommodation);
 
             database.Rooms.Add(room);
             database.SaveChanges();

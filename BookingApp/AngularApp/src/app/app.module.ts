@@ -12,24 +12,28 @@ import { AccommodationTypeComponent } from './accommodation-type/accommodation-t
 import { PlaceComponent } from './place/place.component';
 import { RegionComponent } from './region/region.component';
 import { CountryComponent } from './country/country.component';
+import { RoomComponent } from './room/room.component';
 
 import { AccommodationService } from './services/accommodation.service'
 import { AccommodationTypeService } from './services/accommodation-type.service';
 import { PlaceService } from './services/place.service';
 import { RegionService } from './services/region.service';
 import { CountryService } from './services/country.service';
+import { RoomService } from './services/room.service';
 
 import { AddAccommodationComponent } from './accommodation/add-accommodation/add-accommodation.component';
 import { AddAccommodationTypeComponent } from './accommodation-type/add-accommodation-type/add-accommodation-type.component';
 import { AddPlaceComponent } from './place/add-place/add-place.component';
 import { AddRegionComponent } from './region/add-region/add-region.component';
 import { AddCountryComponent } from './country/add-country/add-country.component';
+import { AddRoomComponent } from './room/add-room/add-room.component';
 
 import { UpdateAccommodationComponent } from './accommodation/update-accommodation/update-accommodation.component';
 import { UpdateAccommodationTypeComponent } from './accommodation-type/update-accommodation-type/update-accommodation-type.component';
 import { UpdatePlaceComponent } from './place/update-place/update-place.component';
 import { UpdateRegionComponent } from './region/update-region/update-region.component';
 import { UpdateCountryComponent } from './country/update-country/update-country.component';
+import { UpdateRoomComponent } from './room/update-room/update-room.component';
 
 const routes: Routes = [ 
   {path: 'accommodations', component: AccommodationComponent},
@@ -37,18 +41,21 @@ const routes: Routes = [
   {path: 'place', component: PlaceComponent},
   {path: 'region', component:RegionComponent},
   {path: 'country', component: CountryComponent},
+  {path: 'room', component: RoomComponent},
 
   {path: 'add-accommodation', component: AddAccommodationComponent},
   {path: 'add-accommodation-type', component: AddAccommodationTypeComponent},
   {path: 'add-place', component: AddPlaceComponent},
   {path: 'add-region', component: AddRegionComponent},
   {path: 'add-country', component: AddCountryComponent},
+  {path: 'add-room', component: AddRoomComponent},
 
   {path: 'update-accommodation/:Id', component: UpdateAccommodationComponent}, 
   {path: 'update-accommodation-type/:Id', component: UpdateAccommodationTypeComponent},
   {path: 'update-place/:Id', component: UpdatePlaceComponent},
   {path: 'update-region/:Id', component: UpdateRegionComponent},
   {path: 'update-country/:Id', component: UpdateCountryComponent},
+  {path: 'update-room/:Id', component: UpdateRoomComponent},
   
 ];
 
@@ -60,18 +67,21 @@ const routes: Routes = [
     PlaceComponent,
     RegionComponent,
     CountryComponent,
+    RoomComponent,
 
     AddAccommodationComponent,
     AddAccommodationTypeComponent,
     AddPlaceComponent,
     AddRegionComponent,
     AddCountryComponent,
+    AddRoomComponent,
     
     UpdateAccommodationComponent,
     UpdateAccommodationTypeComponent,
     UpdatePlaceComponent,
     UpdateRegionComponent,
     UpdateCountryComponent,
+    UpdateRoomComponent,
     
   ],
   imports: [
@@ -83,7 +93,7 @@ const routes: Routes = [
   ],
   exports: [ RouterModule ],
   providers: [AuthService, LoggedInGuard, AccommodationService, AccommodationTypeService, 
-  PlaceService, RegionService, CountryService],
+  PlaceService, RegionService, CountryService, RoomService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

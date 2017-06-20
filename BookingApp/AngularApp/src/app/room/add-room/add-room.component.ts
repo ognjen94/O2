@@ -25,8 +25,8 @@ export class AddRoomComponent implements OnInit {
 
     }
 
-      addRegion(region: Room, form: NgForm): void {       
-        this.RoomService.addRoom(region);
+      addRoom(r: Room, form: NgForm): void {       
+        this.RoomService.addRoom(r);
   }
 
 }

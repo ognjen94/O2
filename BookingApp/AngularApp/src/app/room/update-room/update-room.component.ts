@@ -37,7 +37,7 @@ export class UpdateRoomComponent implements OnInit {
 
   }
 
-  updateRegion(): void {
+  updateRoom(): void {
     this.RoomService.updateRoom(this.room)
       .then(() => this.goBack());
   }

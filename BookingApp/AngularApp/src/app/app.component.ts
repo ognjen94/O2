@@ -50,4 +50,8 @@ export class AppComponent {
     goToCountry(): void {
     this.router.navigate(['/country']);
   }
+
+    goToRoom(): void {
+    this.router.navigate(['/room']);
+  }
 }

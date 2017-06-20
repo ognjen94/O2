@@ -1,7 +1,7 @@
-<div *ngIf="region">
-  <h2>{{region.Name}} details!</h2>
+<div *ngIf="room">
+  <h2>{{room.Name}} details!</h2>
   <div>
-    <label>id: </label>{{region.Id}}</div>
+    <label>id: </label>{{room.Id}}</div>
   <div>
     <label>RoomNumber: </label>
     <input [(ngModel)]="room.RoomNumber" placeholder="RoomNumber" />
@@ -25,5 +25,5 @@
      </select>
     </div>
   <button (click)="goBack()">Back</button>
-  <button (click)="updateRegion()">Save</button>
+  <button (click)="updateRoom()">Save</button>
 </div>

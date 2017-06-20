@@ -16,7 +16,7 @@ export class RoomService {
   constructor(private http: Http) { }
 
   getRoom(): Promise<Room[]> {
-    return this.http.get(this.roomUrl+"?$expand=accommodation")
+    return this.http.get(this.roomUrl+"?$expand=accommodation/owner, accommodation/accommodationType, accommodation/place/region/country")//
                .toPromise()
                .then(response => {return response.json() as Room[]})
                .catch(this.handleError);
