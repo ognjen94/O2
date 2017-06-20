@@ -1,0 +1,19 @@
+<h2>Rooms</h2>
+
+<table class="room" style="height: 21px;" width="427" border="1">
+  <tbody>
+  <tr *ngFor="let room of rooms"(click)="onSelect(room)"
+    [class.selected]="room === selectedRoom">
+
+  <td style="text-align:center;">{{room.RoomNumber}}</td>
+
+</tr>
+</tbody>
+</table>
+
+<button (click)="goToAddRoom()">Add</button>
+
+<div *ngIf="selectedRoom">
+  <button (click)="deleteRoom(selectedRoom)">Delete</button>
+  <button (click)="goToUpdateRoom(selectedRoom)">Update</button>
+</div>

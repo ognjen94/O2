@@ -1,0 +1,29 @@
+<div *ngIf="region">
+  <h2>{{region.Name}} details!</h2>
+  <div>
+    <label>id: </label>{{region.Id}}</div>
+  <div>
+    <label>RoomNumber: </label>
+    <input [(ngModel)]="room.RoomNumber" placeholder="RoomNumber" />
+  </div>
+  <div>
+    <label>BedCount: </label>
+    <input [(ngModel)]="room.BedCount" placeholder="BedCount" />
+  </div>
+  <div>
+    <label>Description: </label>
+    <input [(ngModel)]="room.Description" placeholder="Description" />
+  </div>
+  <div>
+    <label>PricePerNight: </label>
+    <input [(ngModel)]="room.PricePerNight" placeholder="PricePerNight" />
+  </div>
+    <div>
+     <label for="Accommodation">Accommodation</label>
+     <select class="form-control" name="Accommodation" ngModel>
+        <option *ngFor="let a of accommodations" [selected]="room.accommodation.Id === a.Id" [ngValue]="a">{{a.Name}}</option>
+     </select>
+    </div>
+  <button (click)="goBack()">Back</button>
+  <button (click)="updateRegion()">Save</button>
+</div>

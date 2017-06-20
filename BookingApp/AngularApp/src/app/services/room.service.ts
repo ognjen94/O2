@@ -22,6 +22,32 @@ export class RoomService {
                .catch(this.handleError);
   }
 
+  addRoom(r : Room): Promise<Room> {
+    return this.http
+      .post(this.roomUrl, JSON.stringify(r), {headers: this.headers})
+      .toPromise()
+      .then(res => res.json() as Room)
+      .catch(this.handleError);
+  }
+
+    deleteRoom(r : Room): Promise<Room> {
+    const url = `${this.roomUrl}/${r.Id}`
+    return this.http
+      .delete(url, {headers: this.headers})
+      .toPromise()
+      .then(() => null)
+      .catch(this.handleError);
+  }
+
+    updateRoom(r : Room): Promise<Room> {
+    const url = `${this.roomUrl}/${r.Id}`
+    return this.http
+      .put(url, JSON.stringify(r), {headers: this.headers})
+      .toPromise()
+      .then(() => r)
+      .catch(this.handleError);
+  }
+
     private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);
