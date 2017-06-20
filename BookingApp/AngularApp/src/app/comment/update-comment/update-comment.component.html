@@ -1,0 +1,27 @@
+<div *ngIf="comment">
+  <h2>{{comment.Text}} details!</h2>
+  <div>
+    <label>id: </label>{{comment.Id}}</div>
+  <div>
+    <label>Text: </label>
+    <input [(ngModel)]="comment.Text" placeholder="Text" />
+  </div>
+  <div>
+    <label>Grade: </label>
+    <input [(ngModel)]="comment.Grade" placeholder="Grade" />
+  </div>
+    <div>
+     <label for="AppUser">AppUser</label>
+     <select class="form-control" name="AppUser" ngModel>
+        <option *ngFor="let u of appUsers" [selected]="comment.appuser.Id === u.Id" [ngValue]="u">{{u.Name}}</option>
+     </select>
+    </div>
+    <div>
+     <label for="Accommodation">Accommodation</label>
+     <select class="form-control" name="Accommodation" ngModel>
+        <option *ngFor="let a of accommodations" [selected]="comment.accommodation.Id === a.Id" [ngValue]="a">{{a.Name}}</option>
+     </select>
+    </div>
+  <button (click)="goBack()">Back</button>
+  <button (click)="updateRegion()">Save</button>
+</div>

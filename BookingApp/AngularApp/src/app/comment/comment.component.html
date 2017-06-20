@@ -1,0 +1,19 @@
+<h2>Comments</h2>
+
+<table class="comment" style="height: 21px;" width="427" border="1">
+  <tbody>
+  <tr *ngFor="let comment of comments"(click)="onSelect(comment)"
+    [class.selected]="comment === selectedComment">
+
+  <td style="text-align:center;">{{comment.Text}}</td>
+
+</tr>
+</tbody>
+</table>
+
+<button (click)="goToAddComment()">Add</button>
+
+<div *ngIf="selectedComment">
+  <button (click)="deleteComment(selectedComment)">Delete</button>
+  <button (click)="goToUpdateComment(selectedComment)">Update</button>
+</div>

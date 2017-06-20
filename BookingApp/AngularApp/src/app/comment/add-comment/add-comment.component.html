@@ -1,0 +1,23 @@
+<form #f="ngForm" (ngSubmit)="addComment(f.value, f)">
+    <div>
+      <label for="Text">Text</label>
+      <input type="text" name="Text" ngModel>
+    </div>
+    <div>
+      <label for="Grade">Grade</label>
+      <input type="text" name="Grade" ngModel>
+    </div>
+    <div>
+     <label for="AppUser">AppUser</label>
+     <select class="form-control" name="AppUser" ngModel><!--required [(ngModel)]="AccommodationTypeId"-->
+        <option *ngFor="let u of appUser" [ngValue]="u">{{u.Name}}</option>
+     </select>
+    </div>
+    <div>
+     <label for="Accommodation">Accommodation</label>
+     <select class="form-control" name="Accommodation" ngModel><!--required [(ngModel)]="AccommodationTypeId"-->
+        <option *ngFor="let a of acc" [ngValue]="a">{{a.Name}}</option>
+     </select>
+    </div>
+     <input type="submit" value="Submit">
+  </form>
