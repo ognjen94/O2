@@ -2,6 +2,9 @@
 
 <table class="region" style="height: 21px;" width="427" border="1">
   <tbody>
+    <tr>
+      <td style="text-align:center;"><b>Name</b></td>
+      </tr>
   <tr *ngFor="let region of regions"(click)="onSelect(region)"
     [class.selected]="region === selectedRegion">
 

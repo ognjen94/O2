@@ -2,10 +2,16 @@
 
 <table class="comment" style="height: 21px;" width="427" border="1">
   <tbody>
+    <tr>
+      <td style="text-align:center;"><b>Text</b></td>
+      <td style="text-align:center;"><b>Grade</b></td>
+      
+      </tr>
   <tr *ngFor="let comment of comments"(click)="onSelect(comment)"
     [class.selected]="comment === selectedComment">
 
   <td style="text-align:center;">{{comment.Text}}</td>
+<td style="text-align:center;">{{comment.Grade}}</td>
 
 </tr>
 </tbody>

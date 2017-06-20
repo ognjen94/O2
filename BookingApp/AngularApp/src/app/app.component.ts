@@ -13,7 +13,7 @@ import {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'BookingApp';
 
   constructor(private authService: AuthService,
     private router: Router) {

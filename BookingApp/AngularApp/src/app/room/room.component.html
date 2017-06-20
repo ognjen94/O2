@@ -2,12 +2,19 @@
 
 <table class="room" style="height: 21px;" width="427" border="1">
   <tbody>
+    <tr>
+      <td style="text-align:center;"><b>RoomNumber</b></td>
+      <td style="text-align:center;"><b>BedCount</b></td>
+      <td style="text-align:center;"><b>Description</b></td>
+      <td style="text-align:center;"><b>PricePerNight</b></td>
+      </tr>
   <tr *ngFor="let room of rooms"(click)="onSelect(room)"
     [class.selected]="room === selectedRoom">
 
   <td style="text-align:center;">{{room.RoomNumber}}</td>
-  <td style="text-align:center;">{{room.accommodation.Name}}</td>
-
+  <td style="text-align:center;">{{room.BedCount}}</td>
+<td style="text-align:center;">{{room.Description}}</td>
+<td style="text-align:center;">{{room.PricePerNight}}</td>
 </tr>
 </tbody>
 </table>

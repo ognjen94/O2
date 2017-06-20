@@ -2,6 +2,9 @@
 
 <table class="accommodation-type" style="height: 21px;" width="427" border="1">
   <tbody>
+        <tr>
+      <td style="text-align:center;"><b>Name</b></td>
+      </tr>
   <tr *ngFor="let accommodationType of accommodationTypes" (click)="onSelect(accommodationType)"
     [class.selected]="accommodationType === selectedAccType">
 

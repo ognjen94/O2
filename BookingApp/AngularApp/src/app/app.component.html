@@ -1,40 +1,16 @@
-
-<!--p><strong>Username:</strong></p>
-
-<p><input maxlength="30" type="text" /></p>
-
-<p><strong>Password:</strong></p>
-
-<p><input maxlength="30" type="text" /></p>
-
-<p><input name="Login" type="button" value="Login" /></p-->
-
-<h1>
+<h2>
   {{title}}
-  <div *ngIf="!isLoggedIn()">
-    <button (click)="logIn()">Log In!</button>
-    
-  </div>
-  <div *ngIf="isLoggedIn()">
-    <button (click)="logOut()">Log Out!</button>
-  </div>
-<button (click)="goToAccommodation()">acc In!</button>
-<button (click)="goToAccommodationType()">accType In!</button>
-<button (click)="goToPlace()">places</button>
-<button (click)="goToRegion()">regions</button>
-<button (click)="goToCountry()">countries</button>
-<button (click)="goToRoom()">rooms</button>
-<button (click)="goToRoomReservation()">roomReservations</button>
-<button (click)="goToComment()">comments</button>
-<button (click)="goToUser()">users</button>
-  
-</h1>
-<!--html>
-  <body>
-      <nav><a routerLink="/accommodations" routerLinkActive="active">Accommodations</a></nav>
+</h2>
 
-  <router-outlet></router-outlet>
-  
-  </body>
-</html-->
+<button (click)="goToAccommodation()">Accommodations</button>
+<button (click)="goToAccommodationType()">AccommodationTypes</button>
+<button (click)="goToPlace()">Places</button>
+<button (click)="goToRegion()">Regions</button>
+<button (click)="goToCountry()">Countries</button>
+<button (click)="goToRoom()">Rooms</button>
+<button (click)="goToRoomReservation()">RoomReservations</button>
+<button (click)="goToComment()">Comments</button>
+<button (click)="goToUser()">Users</button>
+
+
 <router-outlet></router-outlet>

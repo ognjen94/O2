@@ -2,11 +2,16 @@
 
 <table class="user" style="height: 21px;" width="427" border="1">
   <tbody>
+      <tr>
+          <td style="text-align:center;"><b>Username</b></td>
+      <td style="text-align:center;"><b>Password</b></td>
+      <td style="text-align:center;"><b>Email</b></td>
+      </tr>
   <tr *ngFor="let user of appUsers" (click)="onSelect(user)"
     [class.selected]="user === selectedUser">
 
   <td style="text-align:center;">{{user.Username}}</td>
-
+<td style="text-align:center;">{{user.Password}}</td>
   <td style="text-align:center;">{{user.Email}}</td>
 </tr>
 </tbody>

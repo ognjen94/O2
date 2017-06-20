@@ -2,12 +2,17 @@
 
 <table class="roomreservation" style="height: 21px;" width="427" border="1">
   <tbody>
+    <tr>
+      <td style="text-align:center;"><b>StartDate</b></td>
+      <td style="text-align:center;"><b>EndDate</b></td>
+      <td style="text-align:center;"><b>Timestamp</b></td>
+      </tr>
   <tr *ngFor="let roomreservation of roomres" (click)="onSelect(roomreservation)"
     [class.selected]="roomreservation === selectedRoom ">
 
   <td style="text-align:center;">{{roomreservation.StartDate}}</td>
   <td style="text-align:center;">{{roomreservation.EndDate}}</td>
-
+<td style="text-align:center;">{{roomreservation.Timestamp}}</td>
 </tr>
 </tbody>
 </table>
